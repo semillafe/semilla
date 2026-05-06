@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devocionales · Semilla de Fe</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; color: #2C2C2A; background: #fff; }
+  a { text-decoration: none; color: inherit; }
+
+  /* NAV */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 0.5px solid #D3D1C7; background: #fff; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { font-size: 1.2rem; font-weight: 600; letter-spacing: 0.04em; color: #3B6D11; }
+  .nav-links { display: flex; gap: 1.5rem; font-size: 0.88rem; font-family: Arial, sans-serif; }
+  .nav-links a { color: #5F5E5A; }
+  .nav-links a:hover { color: #3B6D11; }
+  .nav-links a.active { color: #3B6D11; font-weight: 600; border-bottom: 2px solid #3B6D11; padding-bottom: 2px; }
+
+  /* HERO */
+  .hero { background: linear-gradient(160deg, #EAF3DE 0%, #fff 60%); padding: 3.5rem 2rem 2.5rem; text-align: center; }
+  .hero-badge { display: inline-block; background: #C0DD97; color: #27500A; font-size: 0.78rem; font-family: Arial, sans-serif; padding: 4px 14px; border-radius: 20px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
+  .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: #173404; margin-bottom: 0.75rem; }
+  .hero p { font-size: 1rem; color: #5F5E5A; max-width: 500px; margin: 0 auto; line-height: 1.7; font-family: Arial, sans-serif; }
+
+  /* FILTROS */
+  .filtros { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; padding: 1.8rem 2rem 0; }
+  .filtro { background: #F1EFE8; border: 0.5px solid #D3D1C7; border-radius: 20px; padding: 6px 16px; font-size: 0.85rem; font-family: Arial, sans-serif; color: #5F5E5A; cursor: pointer; transition: all 0.2s; }
+  .filtro:hover, .filtro.activo { background: #3B6D11; color: #EAF3DE; border-color: #3B6D11; }
+
+  /* GRID */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; max-width: 960px; margin: 2rem auto; padding: 0 2rem; }
+
+  /* CARD */
+  .card { background: #fff; border: 0.5px solid #D3D1C7; border-radius: 12px; overflow: hidden; transition: box-shadow 0.2s; cursor: pointer; }
+  .card:hover { border-color: #97C459; }
+  .card-top { background: #EAF3DE; padding: 1.4rem 1.2rem 1rem; }
+  .card-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #639922; font-family: Arial, sans-serif; margin-bottom: 0.5rem; }
+  .card-versiculo { font-size: 0.95rem; color: #173404; font-style: italic; line-height: 1.55; }
+  .card-ref { font-size: 0.8rem; color: #639922; font-family: Arial, sans-serif; margin-top: 0.4rem; font-style: normal; }
+  .card-body { padding: 1rem 1.2rem 1.2rem; }
+  .card-titulo { font-size: 1.05rem; font-weight: 700; color: #173404; margin-bottom: 0.5rem; }
+  .card-texto { font-size: 0.88rem; color: #5F5E5A; line-height: 1.65; font-family: Arial, sans-serif; }
+  .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.8rem; border-top: 0.5px solid #F1EFE8; }
+  .card-fecha { font-size: 0.78rem; color: #888780; font-family: Arial, sans-serif; }
+  .card-leer { font-size: 0.82rem; color: #3B6D11; font-family: Arial, sans-serif; font-weight: 500; }
+
+  /* DESTACADO */
+  .destacado { max-width: 960px; margin: 2.5rem auto 0; padding: 0 2rem; }
+  .destacado-card { background: #173404; border-radius: 16px; padding: 2rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; }
+  .destacado-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #97C459; font-family: Arial, sans-serif; margin-bottom: 0.6rem; }
+  .destacado-titulo { font-size: 1.4rem; font-weight: 700; color: #EAF3DE; margin-bottom: 0.6rem; line-height: 1.3; }
+  .destacado-texto { font-size: 0.92rem; color: #97C459; font-family: Arial, sans-serif; line-height: 1.6; }
+  .destacado-btn { background: #3B6D11; color: #EAF3DE; padding: 0.7rem 1.4rem; border-radius: 8px; font-size: 0.9rem; font-family: Arial, sans-serif; white-space: nowrap; }
+  .destacado-btn:hover { background: #27500A; }
+  @media (max-width: 600px) { .destacado-card { grid-template-columns: 1fr; } }
+
+  /* FOOTER */
+  footer { padding: 2rem; text-align: center; border-top: 0.5px solid #D3D1C7; font-family: Arial, sans-serif; font-size: 0.85rem; color: #888780; margin-top: 3rem; }
+  footer span { color: #3B6D11; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">🌱 Semilla de Fe</div>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="devocionales.html" class="active">Devocionales</a>
+    <a href="frases.html">Frases</a>
+    <a href="media.html">Música & Podcast</a>
+    <a href="index.html#canales">Comunidad</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">Palabra diaria</div>
+  <h1>Devocionales</h1>
+  <p>Reflexiones bíblicas para alimentar tu fe cada día. Del Antiguo y Nuevo Testamento, con aplicación práctica a tu vida.</p>
+</div>
+
+<div class="filtros">
+  <div class="filtro activo">Todos</div>
+  <div class="filtro">Antiguo Testamento</div>
+  <div class="filtro">Nuevo Testamento</div>
+  <div class="filtro">Salmos</div>
+  <div class="filtro">Proverbios</div>
+  <div class="filtro">Evangelios</div>
+</div>
+
+<!-- DESTACADO -->
+<div class="destacado">
+  <div class="destacado-card">
+    <div>
+      <div class="destacado-label">✦ Devocional de hoy</div>
+      <div class="destacado-titulo">La vid y los pámpanos</div>
+      <div class="destacado-texto">"Yo soy la vid, vosotros los pámpanos." — Juan 15:5 · Sin permanecer en Él, nada podemos hacer.</div>
+    </div>
+    <a href="#" class="destacado-btn">Leer ahora</a>
+  </div>
+</div>
+
+<!-- GRID -->
+<div class="grid">
+
+  <div class="card">
+    <div class="card-top">
+      <div class="card-tag">Salmos</div>
+      <div class="card-versiculo">"El Señor es mi pastor; nada me faltará."</div>
+      <div class="card-ref">Salmo 23:1</div>
+    </div>
+    <div class="card-body">
+      <div class="card-titulo">Descanso en Sus brazos</div>
+      <div class="card-texto">Cuando la vida se pone difícil, hay un Pastor que conoce tu nombre y va delante de ti preparando el camino.</div>
+      <div class="card-footer">
+        <span class="card-fecha">8 abr 2025</span>
+        <span class="card-leer">Leer más →</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <div class="card-tag">Nuevo Testamento</div>
+      <div class="card-versiculo">"Todo lo puedo en Cristo que me fortalece."</div>
+      <div class="card-ref">Filipenses 4:13</div>
+    </div>
+    <div class="card-body">
+      <div class="card-titulo">Fuerza que no es tuya</div>
+      <div class="card-texto">No se trata de tu capacidad sino de tu dependencia. La fortaleza verdadera nace de la rendición, no del esfuerzo propio.</div>
+      <div class="card-footer">
+        <span class="card-fecha">5 abr 2025</span>
+        <span class="card-leer">Leer más →</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <div class="card-tag">Proverbios</div>
+      <div class="card-versiculo">"Fíate del Señor con todo tu corazón."</div>
+      <div class="card-ref">Proverbios 3:5</div>
+    </div>
+    <div class="card-body">
+      <div class="card-titulo">Cuando no entendés el camino</div>
+      <div class="card-texto">Hay momentos donde la lógica humana no alcanza. Es ahí donde la fe tiene más valor: confiar sin ver el final.</div>
+      <div class="card-footer">
+        <span class="card-fecha">2 abr 2025</span>
+        <span class="card-leer">Leer más →</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <div class="card-tag">Antiguo Testamento</div>
+      <div class="card-versiculo">"Esfuérzate y sé valiente."</div>
+      <div class="card-ref">Josué 1:9</div>
+    </div>
+    <div class="card-body">
+      <div class="card-titulo">El miedo no te define</div>
+      <div class="card-texto">Dios no le dijo a Josué que no tuviera miedo. Le dijo que avanzara a pesar del miedo. Esa es la valentía bíblica.</div>
+      <div class="card-footer">
+        <span class="card-fecha">29 mar 2025</span>
+        <span class="card-leer">Leer más →</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <div class="card-tag">Evangelios</div>
+      <div class="card-versiculo">"Buscad primero el reino de Dios."</div>
+      <div class="card-ref">Mateo 6:33</div>
+    </div>
+    <div class="card-body">
+      <div class="card-titulo">Las prioridades del corazón</div>
+      <div class="card-texto">Lo que ponés primero en tu vida moldea todo lo demás. Cuando Dios es el centro, todo lo necesario llega en Su tiempo.</div>
+      <div class="card-footer">
+        <span class="card-fecha">25 mar 2025</span>
+        <span class="card-leer">Leer más →</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <div class="card-tag">Salmos</div>
+      <div class="card-versiculo">"Crea en mí, oh Dios, un corazón limpio."</div>
+      <div class="card-ref">Salmo 51:10</div>
+    </div>
+    <div class="card-body">
+      <div class="card-titulo">La oración del corazón quebrantado</div>
+      <div class="card-texto">David no pidió que Dios ignorara su pecado. Pidió transformación. Esa honestidad delante de Dios es el inicio del cambio.</div>
+      <div class="card-footer">
+        <span class="card-fecha">20 mar 2025</span>
+        <span class="card-leer">Leer más →</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 <span>Semilla de Fe</span> · Palabra que transforma</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Música Worship · Semilla de Fe</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, serif; color: #2C2C2A; background: #fff; }
+  a { text-decoration: none; color: inherit; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 0.5px solid #D3D1C7; background: #fff; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { font-size: 1.2rem; font-weight: 600; color: #3B6D11; }
+  .nav-links { display: flex; gap: 1.5rem; font-size: 0.88rem; font-family: Arial, sans-serif; }
+  .nav-links a { color: #5F5E5A; }
+  .nav-links a:hover { color: #3B6D11; }
+  .nav-links a.active { color: #3B6D11; font-weight: 600; border-bottom: 2px solid #3B6D11; padding-bottom: 2px; }
+  .hero { background: linear-gradient(160deg, #EAF3DE 0%, #fff 60%); padding: 3.5rem 2rem 2.5rem; text-align: center; }
+  .hero-badge { display: inline-block; background: #C0DD97; color: #27500A; font-size: 0.78rem; font-family: Arial, sans-serif; padding: 4px 14px; border-radius: 20px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
+  .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: #173404; margin-bottom: 0.75rem; }
+  .hero p { font-size: 1rem; color: #5F5E5A; max-width: 500px; margin: 0 auto; line-height: 1.7; font-family: Arial, sans-serif; }
+  .contenido { max-width: 760px; margin: 2.5rem auto; padding: 0 2rem; }
+  .sec-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: #639922; font-family: Arial, sans-serif; margin-bottom: 0.5rem; }
+  .sec-titulo { font-size: 1.6rem; font-weight: 700; color: #173404; margin-bottom: 1.5rem; }
+  .player-destacado { background: #173404; border-radius: 16px; padding: 2rem 2.5rem; display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .player-cover { width: 80px; height: 80px; border-radius: 10px; background: #3B6D11; display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; }
+  .player-info { flex: 1; min-width: 160px; }
+  .player-titulo { font-size: 1.15rem; font-weight: 600; color: #EAF3DE; margin-bottom: 0.3rem; }
+  .player-sub { font-size: 0.85rem; color: #97C459; font-family: Arial, sans-serif; }
+  .player-barra { flex: 2; min-width: 180px; }
+  .barra-prog { height: 4px; background: #3B6D11; border-radius: 4px; margin-bottom: 0.5rem; }
+  .barra-fill { height: 100%; width: 35%; background: #97C459; border-radius: 4px; }
+  .barra-tiempos { display: flex; justify-content: space-between; font-size: 0.75rem; color: #97C459; font-family: Arial, sans-serif; }
+  .player-controles { display: flex; gap: 0.8rem; align-items: center; }
+  .ctrl-btn { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: #EAF3DE; padding: 4px; }
+  .ctrl-play { background: #3B6D11; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+  .musica-lista { display: flex; flex-direction: column; gap: 0.8rem; }
+  .cancion { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.2rem; border-radius: 10px; border: 0.5px solid #D3D1C7; background: #fff; transition: all 0.2s; cursor: pointer; }
+  .cancion:hover { background: #EAF3DE; border-color: #97C459; }
+  .cancion-num { font-size: 0.85rem; color: #888780; font-family: Arial, sans-serif; width: 20px; text-align: center; }
+  .cancion-cover { width: 44px; height: 44px; border-radius: 8px; background: #EAF3DE; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+  .cancion-info { flex: 1; }
+  .cancion-titulo { font-size: 0.95rem; font-weight: 500; color: #173404; }
+  .cancion-versiculo { font-size: 0.8rem; color: #639922; font-family: Arial, sans-serif; }
+  .cancion-dur { font-size: 0.82rem; color: #888780; font-family: Arial, sans-serif; }
+  footer { padding: 2rem; text-align: center; border-top: 0.5px solid #D3D1C7; font-family: Arial, sans-serif; font-size: 0.85rem; color: #888780; margin-top: 3rem; }
+  footer span { color: #3B6D11; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">🌱 Semilla de Fe</div>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="devocionales.html">Devocionales</a>
+    <a href="frases.html">Frases</a>
+    <a href="musica.html" class="active">Música</a>
+    <a href="podcast.html">Podcast</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hero-badge">Adoración · Worship</div>
+  <h1>Música worship</h1>
+  <p>Canciones de adoración basadas en la Palabra. Música que eleva el alma y acerca a Dios.</p>
+</div>
+<div class="contenido">
+  <div class="sec-label">Tema destacado</div>
+  <div class="sec-titulo">Agradecido</div>
+  <div style="border-radius:14px; overflow:hidden; margin-bottom:2rem; aspect-ratio:16/9; background:#000;">
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/pIy18nfl8gc" title="Agradecido - Semilla de Fe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+  </div>
+  <div class="musica-lista">
+    <a href="https://www.youtube.com/watch?v=pIy18nfl8gc" target="_blank" class="cancion" style="text-decoration:none; color:inherit;">
+      <div class="cancion-num">1</div><div class="cancion-cover">🎵</div>
+      <div class="cancion-info"><div class="cancion-titulo">Agradecido</div><div class="cancion-versiculo">Semilla de Fe</div></div>
+      <div class="cancion-dur">▶ Ver</div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=K6rfmJAqa_I" target="_blank" class="cancion" style="text-decoration:none; color:inherit;">
+      <div class="cancion-num">2</div><div class="cancion-cover">🎵</div>
+      <div class="cancion-info"><div class="cancion-titulo">Tu consejo permanecerá</div><div class="cancion-versiculo">Semilla de Fe</div></div>
+      <div class="cancion-dur">▶ Ver</div>
+    </a>
+  </div>
+</div>
+<footer><p>© 2025 <span>Semilla de Fe</span> · Adoración y Palabra</p></footer>
+</body>
+</html>

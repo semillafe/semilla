@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frases · Semilla de Fe</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, serif; color: #2C2C2A; background: #fff; }
+  a { text-decoration: none; color: inherit; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 0.5px solid #D3D1C7; background: #fff; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { font-size: 1.2rem; font-weight: 600; color: #3B6D11; }
+  .nav-links { display: flex; gap: 1.5rem; font-size: 0.88rem; font-family: Arial, sans-serif; }
+  .nav-links a { color: #5F5E5A; }
+  .nav-links a:hover { color: #3B6D11; }
+  .nav-links a.active { color: #3B6D11; font-weight: 600; border-bottom: 2px solid #3B6D11; padding-bottom: 2px; }
+
+  /* HERO */
+  .hero { background: linear-gradient(160deg, #EAF3DE 0%, #fff 60%); padding: 3.5rem 2rem 2.5rem; text-align: center; }
+  .hero-badge { display: inline-block; background: #C0DD97; color: #27500A; font-size: 0.78rem; font-family: Arial, sans-serif; padding: 4px 14px; border-radius: 20px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
+  .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: #173404; margin-bottom: 0.75rem; }
+  .hero p { font-size: 1rem; color: #5F5E5A; max-width: 500px; margin: 0 auto; line-height: 1.7; font-family: Arial, sans-serif; }
+
+  /* CARRUSEL */
+  .carrusel-wrap { max-width: 760px; margin: 2.5rem auto 0; padding: 0 2rem; }
+  .carrusel-card { background: #173404; border-radius: 16px; padding: 3rem 2.5rem; text-align: center; min-height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .carrusel-frase { font-size: clamp(1.2rem, 3vw, 1.6rem); color: #EAF3DE; font-style: italic; line-height: 1.6; margin-bottom: 1rem; }
+  .carrusel-autor { font-size: 0.85rem; color: #97C459; font-family: Arial, sans-serif; letter-spacing: 0.05em; }
+  .carrusel-controles { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 1.2rem; }
+  .carrusel-btn { background: #EAF3DE; border: none; border-radius: 8px; padding: 0.5rem 1.2rem; font-size: 1rem; cursor: pointer; color: #173404; transition: background 0.2s; }
+  .carrusel-btn:hover { background: #C0DD97; }
+  .carrusel-dots { display: flex; gap: 6px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #D3D1C7; transition: background 0.2s; }
+  .dot.activo { background: #3B6D11; }
+
+  /* GRILLA */
+  .grilla-section { max-width: 960px; margin: 3rem auto 0; padding: 0 2rem; }
+  .seccion-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: #639922; font-family: Arial, sans-serif; margin-bottom: 0.5rem; }
+  .seccion-titulo { font-size: 1.6rem; font-weight: 700; color: #173404; margin-bottom: 1.5rem; }
+  .grilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+  .frase-card { background: #EAF3DE; border-radius: 12px; padding: 1.4rem 1.2rem; border: 0.5px solid #C0DD97; }
+  .frase-card blockquote { font-size: 0.95rem; color: #173404; font-style: italic; line-height: 1.6; margin-bottom: 0.6rem; }
+  .frase-card cite { font-size: 0.78rem; color: #639922; font-family: Arial, sans-serif; font-style: normal; }
+
+  /* LISTA CON REFLEXIÓN */
+  .lista-section { max-width: 760px; margin: 3rem auto 0; padding: 0 2rem; }
+  .lista-item { border-left: 3px solid #3B6D11; padding: 1rem 0 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .lista-frase { font-size: 1.05rem; color: #173404; font-style: italic; margin-bottom: 0.5rem; }
+  .lista-ref { font-size: 0.8rem; color: #639922; font-family: Arial, sans-serif; margin-bottom: 0.5rem; }
+  .lista-reflexion { font-size: 0.9rem; color: #5F5E5A; font-family: Arial, sans-serif; line-height: 1.65; }
+
+  footer { padding: 2rem; text-align: center; border-top: 0.5px solid #D3D1C7; font-family: Arial, sans-serif; font-size: 0.85rem; color: #888780; margin-top: 3rem; }
+  footer span { color: #3B6D11; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">🌱 Semilla de Fe</div>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="devocionales.html">Devocionales</a>
+    <a href="frases.html" class="active">Frases</a>
+    <a href="media.html">Música & Podcast</a>
+    <a href="index.html#canales">Comunidad</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">Palabras que transforman</div>
+  <h1>Frases motivadoras</h1>
+  <p>Palabras que confrontan, consuelan y encienden la fe. Guardá las que te hablen al corazón.</p>
+</div>
+
+<!-- CARRUSEL -->
+<div class="carrusel-wrap">
+  <div class="carrusel-card">
+    <div class="carrusel-frase" id="c-frase">"No temas, porque yo estoy contigo. No te desalientes, porque yo soy tu Dios."</div>
+    <div class="carrusel-autor" id="c-autor">— Isaías 41:10</div>
+  </div>
+  <div class="carrusel-controles">
+    <button class="carrusel-btn" onclick="mover(-1)">←</button>
+    <div class="carrusel-dots" id="dots"></div>
+    <button class="carrusel-btn" onclick="mover(1)">→</button>
+  </div>
+</div>
+
+<!-- GRILLA -->
+<div class="grilla-section" style="margin-top:3rem;">
+  <div class="seccion-label">Para compartir</div>
+  <div class="seccion-titulo">Frases del corazón</div>
+  <div class="grilla">
+    <div class="frase-card"><blockquote>"La fe no elimina las tormentas, te enseña a caminar sobre ellas."</blockquote><cite>— Semilla de Fe</cite></div>
+    <div class="frase-card"><blockquote>"Dios no te pide que entiendas el camino, solo que confíes en quien te guía."</blockquote><cite>— Semilla de Fe</cite></div>
+    <div class="frase-card"><blockquote>"Tu historia no terminó. Dios todavía está escribiendo el capítulo más importante."</blockquote><cite>— Semilla de Fe</cite></div>
+    <div class="frase-card"><blockquote>"El quebranto es el idioma que Dios más escucha."</blockquote><cite>— Semilla de Fe</cite></div>
+    <div class="frase-card"><blockquote>"No busques una fe sin pruebas. Busca un corazón que resista en medio de ellas."</blockquote><cite>— Semilla de Fe</cite></div>
+    <div class="frase-card"><blockquote>"Cada amanecer es la firma de Dios diciéndote: todavía creo en vos."</blockquote><cite>— Semilla de Fe</cite></div>
+  </div>
+</div>
+
+<!-- LISTA CON REFLEXIÓN -->
+<div class="lista-section" style="margin-top:3rem;">
+  <div class="seccion-label">Para meditar</div>
+  <div class="seccion-titulo">Palabra y reflexión</div>
+
+  <div class="lista-item">
+    <div class="lista-frase">"Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar."</div>
+    <div class="lista-ref">Mateo 11:28</div>
+    <div class="lista-reflexion">No es debilidad acudir a Dios cuando ya no podés más. Es precisamente para eso que Él te invita. El descanso verdadero no viene de resolver todo, sino de soltarlo.</div>
+  </div>
+
+  <div class="lista-item">
+    <div class="lista-frase">"El corazón del hombre traza su rumbo, pero sus pasos los dirige el Señor."</div>
+    <div class="lista-ref">Proverbios 16:9</div>
+    <div class="lista-reflexion">Planificá, soñá, avanzá. Pero mantenete abierto a que Dios redirija. Sus desvíos no son errores, son el camino real hacia donde necesitás llegar.</div>
+  </div>
+
+  <div class="lista-item">
+    <div class="lista-frase">"Porque mis pensamientos no son vuestros pensamientos, ni vuestros caminos mis caminos."</div>
+    <div class="lista-ref">Isaías 55:8</div>
+    <div class="lista-reflexion">Hay situaciones que desde la lógica humana no tienen sentido. La fe empieza justo ahí: donde el entendimiento termina y la confianza en Dios comienza.</div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 <span>Semilla de Fe</span> · Palabras que transforman</p>
+</footer>
+
+<script>
+  const frases = [
+    { f: '"No temas, porque yo estoy contigo. No te desalientes, porque yo soy tu Dios."', a: '— Isaías 41:10' },
+    { f: '"Encomienda al Señor tu camino; confía en él, y él actuará."', a: '— Salmo 37:5' },
+    { f: '"Todo lo puedo en Cristo que me fortalece."', a: '— Filipenses 4:13' },
+    { f: '"Buscad primero el reino de Dios y su justicia, y todo lo demás se os dará por añadidura."', a: '— Mateo 6:33' },
+    { f: '"Jehová es mi luz y mi salvación; ¿a quién temeré?"', a: '— Salmo 27:1' },
+  ];
+  let actual = 0;
+  const dotsEl = document.getElementById('dots');
+  frases.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' activo' : '');
+    dotsEl.appendChild(d);
+  });
+  function actualizar() {
+    document.getElementById('c-frase').textContent = frases[actual].f;
+    document.getElementById('c-autor').textContent = frases[actual].a;
+    document.querySelectorAll('.dot').forEach((d, i) => d.className = 'dot' + (i === actual ? ' activo' : ''));
+  }
+  function mover(dir) {
+    actual = (actual + dir + frases.length) % frases.length;
+    actualizar();
+  }
+  setInterval(() => mover(1), 5000);
+</script>
+</body>
+</html>

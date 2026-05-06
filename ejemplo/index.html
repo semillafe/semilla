@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semilla de Fe</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; color: #2C2C2A; background: #fff; }
+  a { text-decoration: none; color: inherit; }
+
+  /* NAV */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 0.5px solid #D3D1C7; background: #fff; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { font-size: 1.2rem; font-weight: 600; letter-spacing: 0.04em; color: #3B6D11; }
+  .nav-links { display: flex; gap: 1.5rem; font-size: 0.88rem; color: #5F5E5A; font-family: Arial, sans-serif; }
+  .nav-links a:hover { color: #3B6D11; }
+
+  /* HERO */
+  .hero { background: linear-gradient(160deg, #EAF3DE 0%, #fff 60%); padding: 5rem 2rem 4rem; text-align: center; }
+  .hero-badge { display: inline-block; background: #C0DD97; color: #27500A; font-size: 0.78rem; font-family: Arial, sans-serif; padding: 4px 14px; border-radius: 20px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; color: #173404; line-height: 1.15; margin-bottom: 1rem; }
+  .hero h1 span { color: #3B6D11; }
+  .hero p { font-size: 1.15rem; color: #5F5E5A; max-width: 560px; margin: 0 auto 2.2rem; line-height: 1.7; font-family: Arial, sans-serif; }
+  .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: #3B6D11; color: #EAF3DE; padding: 0.75rem 1.8rem; border-radius: 8px; font-size: 0.95rem; font-family: Arial, sans-serif; font-weight: 500; transition: background 0.2s; }
+  .btn-primary:hover { background: #27500A; }
+  .btn-secondary { border: 1.5px solid #3B6D11; color: #3B6D11; padding: 0.75rem 1.8rem; border-radius: 8px; font-size: 0.95rem; font-family: Arial, sans-serif; font-weight: 500; transition: all 0.2s; }
+  .btn-secondary:hover { background: #EAF3DE; }
+
+  /* SECTION BASE */
+  section { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; }
+  .section-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: #639922; font-family: Arial, sans-serif; margin-bottom: 0.6rem; }
+  .section-title { font-size: 1.9rem; color: #173404; font-weight: 700; margin-bottom: 1rem; line-height: 1.25; }
+  .section-text { font-size: 1rem; color: #5F5E5A; line-height: 1.75; font-family: Arial, sans-serif; max-width: 640px; }
+
+  /* ABOUT */
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .about-symbol { font-size: 5rem; text-align: center; padding: 2rem; background: #EAF3DE; border-radius: 16px; color: #3B6D11; }
+  @media (max-width: 600px) { .about { grid-template-columns: 1fr; } }
+
+  /* CONTENT CARDS */
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .card { background: #F1EFE8; border-radius: 12px; padding: 1.4rem 1.2rem; }
+  .card-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+  .card h3 { font-size: 1rem; font-weight: 600; color: #173404; margin-bottom: 0.4rem; }
+  .card p { font-size: 0.88rem; color: #5F5E5A; line-height: 1.55; font-family: Arial, sans-serif; }
+
+  /* CANALES */
+  .canales-section { background: #EAF3DE; margin: 0; max-width: 100%; padding: 4rem 2rem; }
+  .canales-inner { max-width: 900px; margin: 0 auto; }
+  .canales-grid { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+  .canal-btn { display: flex; align-items: center; gap: 10px; background: #fff; border: 0.5px solid #C0DD97; border-radius: 10px; padding: 0.9rem 1.4rem; font-family: Arial, sans-serif; font-size: 0.95rem; font-weight: 500; color: #27500A; transition: all 0.2s; cursor: pointer; }
+  .canal-btn:hover { background: #C0DD97; }
+  .canal-icon { font-size: 1.3rem; }
+
+  /* VERSÍCULO */
+  .versiculo { text-align: center; padding: 5rem 2rem; background: #173404; color: #EAF3DE; max-width: 100%; }
+  .versiculo blockquote { font-size: clamp(1.2rem, 3vw, 1.7rem); max-width: 680px; margin: 0 auto 1.2rem; line-height: 1.65; font-style: italic; }
+  .versiculo cite { font-size: 0.9rem; color: #97C459; font-family: Arial, sans-serif; font-style: normal; letter-spacing: 0.05em; }
+
+  /* FOOTER */
+  footer { padding: 2rem; text-align: center; border-top: 0.5px solid #D3D1C7; font-family: Arial, sans-serif; font-size: 0.85rem; color: #888780; }
+  footer span { color: #3B6D11; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">🌱 Semilla de Fe</div>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="devocionales.html">Devocionales</a>
+    <a href="frases.html">Frases</a>
+    <a href="musica.html">Música</a>
+    <a href="podcast.html">Podcast</a>
+    <a href="#canales">Comunidad</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Devocionales · Fe · Palabra</div>
+  <h1>Una <span>semilla</span> plantada<br>en tu corazón</h1>
+  <p>Contenido espiritual para alimentar tu fe cada día. Devocionales, frases, música worship y mucho más.</p>
+  <div class="hero-ctas">
+    <a href="#canales" class="btn-primary">Unirse a la comunidad</a>
+    <a href="#contenido" class="btn-secondary">Ver el contenido</a>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="about">
+    <div>
+      <div class="section-label">¿Qué es Semilla de Fe?</div>
+      <h2 class="section-title">Un proyecto nacido de la Palabra</h2>
+      <p class="section-text">Semilla de Fe es un espacio de encuentro espiritual donde cada pieza de contenido busca tocar el corazón, confrontar con amor y acercar a las personas a Dios. Devocionales bíblicos, reflexiones profundas y música que eleva el alma.</p>
+    </div>
+    <div class="about-symbol">✝</div>
+  </div>
+</section>
+
+<!-- CONTENIDO -->
+<section id="contenido" style="padding-top: 0;">
+  <div class="section-label">Lo que encontrás</div>
+  <h2 class="section-title">Contenido para cada momento</h2>
+  <div class="cards-grid">
+    <a href="devocionales.html" style="display:block; color:inherit; text-decoration:none;" class="card">
+      <div class="card-icon">📖</div>
+      <h3>Devocionales</h3>
+      <p>Reflexiones bíblicas del AT y NT para empezar el día con propósito.</p>
+    </a>
+    <a href="frases.html" style="display:block; color:inherit; text-decoration:none;" class="card">
+      <div class="card-icon">✨</div>
+      <h3>Frases inspiradoras</h3>
+      <p>Palabras que confrontan, consuelan y motivan tu caminar de fe.</p>
+    </a>
+    <a href="musica.html" style="display:block; color:inherit; text-decoration:none;" class="card">
+      <div class="card-icon">🎵</div>
+      <h3>Música worship</h3>
+      <p>Canciones de adoración basadas en devocionales bíblicos.</p>
+    </a>
+    <a href="podcast.html" style="display:block; color:inherit; text-decoration:none;" class="card">
+      <div class="card-icon">🎙️</div>
+      <h3>Podcast / Shorts</h3>
+      <p>Contenido audiovisual breve y poderoso para llevar en el día.</p>
+    </a>
+  </div>
+</section>
+
+<!-- CANALES -->
+<div class="canales-section" id="canales">
+  <div class="canales-inner">
+    <div class="section-label">Comunidad</div>
+    <h2 class="section-title" style="color:#173404;">Seguinos en nuestros canales</h2>
+    <p class="section-text">Sé parte de la comunidad Semilla de Fe. Contenido fresco, comunidad activa y la Palabra llegando a tu pantalla cada día.</p>
+    <div class="canales-grid">
+      <a href="https://www.youtube.com" target="_blank" class="canal-btn"><span class="canal-icon">▶</span> YouTube</a>
+      <a href="https://whatsapp.com/channel/TU-LINK-AQUI" target="_blank" class="canal-btn"><span class="canal-icon">💬</span> WhatsApp</a>
+      <a href="#" class="canal-btn"><span class="canal-icon">📝</span> Blog</a>
+      <a href="https://www.instagram.com/semilladefe2021" target="_blank" class="canal-btn"><span class="canal-icon">📸</span> Instagram</a>
+    </div>
+  </div>
+</div>
+
+<!-- VERSÍCULO -->
+<div class="versiculo">
+  <blockquote>"Así será mi palabra que sale de mi boca; no volverá a mí vacía."</blockquote>
+  <cite>— Isaías 55:11</cite>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>Semilla de Fe</span> · Hecho con fe y propósito</p>
+</footer>
+
+</body>
+</html>
